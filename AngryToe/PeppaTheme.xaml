@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:AngryToe">
+    
+    <Style x:Key="GridStyle" TargetType="Grid">
+        <Setter Property="Background" Value="#AFF1AC" />
+    </Style>
+
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="#98F193" />
+        <Setter Property="Foreground" Value="#FE7A7E" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="BorderBrush" Value="#98F193" />
+    </Style>
+
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#73E26D" />
+        <Setter Property="Foreground" Value="#A5282B" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="35" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="CoupleButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#73E26D" />
+        <Setter Property="Foreground" Value="#A5282B" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Height" Value="30" />
+    </Style>
+
+    <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#299323" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="RadioBtnStyle" TargetType="RadioButton">
+        <Setter Property="Foreground" Value="#6BAA68" />
+    </Style>
+
+    <Style x:Key="BorderBrushStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#6BAA68"/>
+    </Style>
+
+    <Style x:Key="BorderMainStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#BE7476"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,350 @@
+﻿<Window x:Class="AngryToe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AngryToe"
+        mc:Ignorable="d"
+        Title="AngryToe" Height="500" Width="630" ResizeMode="NoResize" x:Name="myToe" Icon="pack://siteoforigin:,,,/Resources/iconfinder_Tic-Tac-Toe-Game_190322.ico">
+
+    <Grid
+		x:Name="MainGrid"
+		Style="{DynamicResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="1.3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+				x:Name="ColapsColumn"
+				Width="Auto"></ColumnDefinition>
+            <ColumnDefinition
+				Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition
+				Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition
+				Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition
+				Width="0.4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+         <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="12" Style="{DynamicResource BorderMainStyle}" 
+        	BorderThickness="0,0,3,0" Background="{x:Null}"/>
+        <Border Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="4" Style="{DynamicResource BorderMainStyle}" 
+        	BorderThickness="0,1,0,0" Background="{x:Null}" />
+        <TextBlock
+			Grid.Column="0"
+			Grid.Row="0"
+			FontSize="24"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			FontWeight="Bold"
+			Margin="5,0,5,0"
+			Style="{DynamicResource TextBlockStyle}" >
+			<Run
+				Text="GAME SETTINGS" />
+        </TextBlock>
+        <Viewbox
+			Stretch="Uniform"
+			Height="25"
+			Grid.Column="0"
+			Grid.Row="1"
+			Margin="5,0,0,0"
+			HorizontalAlignment="Left">
+            <RadioButton
+				x:Name="NewGameRB"
+				GroupName="Connection"
+				Checked="radioButton_Checked"
+				Content="Start New Game"
+				HorizontalAlignment="Left"
+			Style="{DynamicResource RadioBtnStyle}" />
+        </Viewbox>
+        <Viewbox
+			Stretch="Uniform"
+			Height="25"
+			Grid.Column="0"
+			Grid.Row="2"
+			Margin="5,0,0,0"
+			HorizontalAlignment="Left">
+            <RadioButton
+				x:Name="ConnectRB"
+				GroupName="Connection"
+				Checked="radioButton_Checked"
+				Content="Connect To Server"
+				Style="{DynamicResource RadioBtnStyle}" />
+        </Viewbox>
+        <TextBlock
+			Text="Enter Your Name:"
+			Grid.Column="0"
+			Grid.Row="3"
+			FontSize="23"
+			FontWeight="Bold" 
+			Margin="5,0,5,0"
+			Style="{DynamicResource TextBlockStyle}"
+			/>
+        <TextBox
+			x:Name="UserNameTB"
+			Grid.Column="0"
+			Grid.Row="4"
+			Margin="5,0,5,0"
+			Style="{DynamicResource TextBoxStyle}" />
+        <Viewbox
+			Stretch="Uniform"
+			Height="30"
+			Grid.Column="0"
+			Grid.Row="5"
+			Margin="5,0,0,0"
+			HorizontalAlignment="Left">
+            <!--Changes here-->
+            <RadioButton
+				x:Name="AngryRB"
+				GroupName="GameType"
+				Content="Angry"
+				Checked="GameTypeRB_Checked" 
+				Style="{DynamicResource RadioBtnStyle}" />
+
+        </Viewbox>
+        <Viewbox
+			Stretch="Uniform"
+			Height="30"
+			Grid.Column="0"
+			Grid.Row="6"
+			Margin="5,0,0,0"
+			HorizontalAlignment="Left">
+            <RadioButton
+				x:Name="PeppaRB"
+				GroupName="GameType"
+				Content="Peppa"
+				Checked="GameTypeRB_Checked"
+				Style="{DynamicResource RadioBtnStyle}" />
+        </Viewbox>
+        <Viewbox
+			Stretch="Uniform"
+			Height="30"
+			Grid.Column="0"
+			Grid.Row="7"
+			Margin="5,0,0,0"
+			HorizontalAlignment="Left">
+            <RadioButton
+				x:Name="ClassicRB"
+				GroupName="GameType"
+				Content="Classic"
+				Checked="GameTypeRB_Checked"
+				Style="{DynamicResource RadioBtnStyle}" />
+        </Viewbox>
+        <Viewbox
+			Stretch="Uniform"
+			Grid.Column="0"
+			Grid.Row="8"
+			Margin="5,0,0,0"
+			Height="30">
+            <TextBlock
+			Text="Field Size:"
+			FontWeight="Bold"
+			Style="{DynamicResource TextBlockStyle}"/>
+        </Viewbox>
+        <Viewbox
+			Stretch="Uniform"
+			Height="30"
+			Grid.Column="0"
+			Grid.Row="9"
+			Margin="5,0,0,0"
+			HorizontalAlignment="Left">
+            <RadioButton
+				x:Name="ThreeFieldRB"
+				GroupName="FieldType"
+				Content="3 x 3"
+                Checked="GameFieldSizeTypeRB_Checked"
+				Style="{DynamicResource RadioBtnStyle}" />
+        </Viewbox>
+        <Viewbox
+			Stretch="Uniform"
+			Height="30"
+			Grid.Column="0"
+			Grid.Row="9"
+			Margin="5,0,0,0"
+			HorizontalAlignment="Right">
+            <RadioButton
+				x:Name="FiveFieldRB"
+				GroupName="FieldType"
+				Content="5 x 5"
+				Margin="0,0,5,0"
+                Checked="GameFieldSizeTypeRB_Checked"
+				Style="{DynamicResource RadioBtnStyle}" />
+        </Viewbox>
+        <Button
+			x:Name="StartBtn"
+			Grid.Column="0"
+			Grid.Row="10"
+			Content="Start"
+			FontSize="20"
+			FontWeight="Bold"
+            Width="100"
+			Click="StartButtonClick"
+           Style="{DynamicResource ButtonStyle}"
+			 />
+        
+        <Button
+			x:Name="ColapseBtn"
+			Grid.Column="1"
+			Grid.Row="11"
+			Content="Colaps"
+			Click="ColapsButtonClick"
+			Style="{DynamicResource CoupleButtonStyle}" />
+        <Button
+			x:Name="SoundBtn"
+			Grid.Column="2"
+			Grid.Row="11"
+			Content="Tune On"
+			Click="SoundButtonClick"
+			Margin="5,0,0,0"
+			Style="{DynamicResource CoupleButtonStyle}" />
+        <!--<Button
+			x:Name="WhoPlayBtn"
+			Grid.Column="3"
+			Grid.Row="11" />-->
+        <!--test-->
+        <TextBlock
+			x:Name="WhomStepTB"
+			Grid.Column="3"
+			Grid.Row="11"
+			Grid.ColumnSpan="2"
+			Width="200"
+            Margin="10,0,0,0"
+            FontSize="13"
+            FontStyle="Italic"
+			Style="{DynamicResource TextBlockStyle}"
+			VerticalAlignment="Center"
+            HorizontalAlignment="Left" />
+        <TextBlock
+			x:Name="WhomStepIconTB"
+			Grid.Column="4"
+			Grid.Row="11"
+			Width="70"
+			HorizontalAlignment="Right" />
+        <!--test-->
+        <!--<Grid
+			x:Name="InternalField_3x3_Grid"
+			Grid.Column="1"
+			Grid.Row="1"
+			Grid.ColumnSpan="4"
+			Grid.RowSpan="10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>-->
+        <Grid
+			x:Name="InternalField_5x5_Grid"
+			Grid.Column="1"
+			Grid.Row="1"
+			Grid.ColumnSpan="4"
+			Grid.RowSpan="10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--<Grid.Background>
+                <ImageBrush ImageSource="/Resources/FIELD.png"/>
+            </Grid.Background>-->
+        </Grid>
+        <Grid
+			x:Name="InternalHeaderGrid"
+			Grid.Row="0"
+			Grid.Column="1"
+			Grid.ColumnSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="0.8*"></ColumnDefinition>
+                <ColumnDefinition
+					Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition
+					Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition
+					Width="0.8*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{DynamicResource BorderBrushStyle}" 
+        	BorderThickness="0,0,2,0" Background="{x:Null}" />
+            <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Style="{DynamicResource BorderMainStyle}" 
+        	BorderThickness="0,0,0,1" Background="{x:Null}" />
+            <TextBlock
+				Text="SCORES"
+				Grid.Column="0"
+				Grid.Row="0"
+				Grid.ColumnSpan="4"
+				FontSize="18"
+				FontWeight="Bold"
+				Style="{DynamicResource TextBlockStyle}"
+				HorizontalAlignment="Center"></TextBlock>
+            <TextBlock
+				x:Name="Player1Name"
+				Grid.Column="0"
+				Grid.Row="1"
+				Text="Player 1"
+				FontSize="14"
+				FontWeight="Bold"
+				Style="{DynamicResource TextBlockStyle}"
+				HorizontalAlignment="Right" />
+            <TextBlock
+				x:Name="ScoresPlayer1"
+				Grid.Column="1"
+				Grid.Row="1"
+				HorizontalAlignment="Right"
+				Text="0"
+				FontSize="14"
+				FontWeight="Bold"
+				Foreground="Red"
+				Margin="0,0,7,0"/>
+            <TextBlock
+				x:Name="Player2Name"
+				Grid.Column="3"
+				Grid.Row="1"
+				HorizontalAlignment="Left"
+				FontSize="14"
+				FontWeight="Bold"
+				Style="{DynamicResource TextBlockStyle}"
+				Text="Player 2" />
+            <TextBlock
+				x:Name="ScoresPlayer2"
+				Grid.Column="2"
+				Grid.Row="1"
+				HorizontalAlignment="Left"
+				Text="0" 
+				FontSize="14"
+				Foreground="Red"
+				FontWeight="Bold"
+				Margin="5,0,0,0"/>
+        </Grid>
+    </Grid>
+</Window>
